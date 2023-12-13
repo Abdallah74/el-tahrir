@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review</title>
+    <link rel="stylesheet" href="review.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body><h1>Welcome to the Homepage</h1>
+    <label for="codeInput">Enter Code:</label>
+    <input type="text" id="codeInput" />
+    <button onclick="checkCode()">Submit</button>
+    <a
+      href="index.html"
+      id="blankLink"
+      target="_blank"
+      rel="noopener noreferrer"></a>
+    <p id="message"></p>
+
+    <script>
+      function checkCode() {
+        const validCodes = [100, 101, 102, 103, 104, 105];
+        const enteredCode = parseInt(
+          document.getElementById("codeInput").value
+        );
+        const blankLink = document.getElementById("blankLink");
+
+        // Replace 'YOUR_VALID_CODE' with the actual valid code
+        if (validCodes.includes(enteredCode)) {
+          console.log("good");
+          blankLink.click();
+        } else {
+          const messageElement = document.getElementById("message");
+          messageElement.textContent =
+            "Invalid code. Please enter a valid code.";
+        }
+      }
+    </script>
+  </body>
+</html>
